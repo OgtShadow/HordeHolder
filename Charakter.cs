@@ -29,11 +29,6 @@ class Charakter
         int Hp = (dice.roll(hitdice)) * (lvl - 1) + lvl * Con + hitdice;
         this.Speed = speed;
     }
-
-    //konstruktor bez parametrowy
-    public Charakter() 
-    {
-
-    }
+    // konstruktor bez parametrów to więcej roboty niestety no bo całe wybieranie gdzie jaką statę trzeba obsłużyć więc to raczej będzie na froncie
 
 }

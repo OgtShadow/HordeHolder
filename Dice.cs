@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace Charakter_sheet
 {
+    // wielofunkcyjna kostka która będzie nam łatwiej pozwalała losować dane wszelkiej maści i rollować
     internal class Dice
     {
         Random dice;
         int baseRange;
+        //możemy podać bazowy zakres kostki co powinno być inną klasą ale to to do
         public Dice() 
         {
             Random dice = new Random();
@@ -53,13 +55,13 @@ namespace Charakter_sheet
             return value;
         }
 
-        public int statMultiRoll()
+        public int threeBestOutOfFour()//roll do statów
         {
             int value = 0;
             int[] tab = new int[4];
             for (int i = 0; i < 4; i++)
             {
-                tab[i] = roll(20);
+                tab[i] = roll(6);
             }
             Array.Sort(tab);
             tab[3] = 0;
@@ -76,7 +78,7 @@ namespace Charakter_sheet
             int[] result = new int[6];
             for (int i = 0;i<6;i++)
             {
-                result[i] = statMultiRoll();
+                result[i] = threeBestOutOfFour();
             }
             return result;
         }

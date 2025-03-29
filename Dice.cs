@@ -43,12 +43,29 @@ namespace Charakter_sheet
             return value;
         }
 
-        public int multiRoll(int number,int max)
+        public int multiRoll(int number,int max) 
         {
             int value = 0;
-            for (int i = 0; i < number; i++)
+            for(int i = 0;i<number;i++)
             {
                 value += roll(max);
+            }
+            return value;
+        }
+
+        public int statMultiRoll()
+        {
+            int value = 0;
+            int[] tab = new int[4];
+            for (int i = 0; i < 4; i++)
+            {
+                tab[i] = roll(20);
+            }
+            Array.Sort(tab);
+            tab[3] = 0;
+            for(int i = 0;i<3;i++)
+            {
+                value += tab[i];
             }
             return value;
         }
@@ -57,18 +74,25 @@ namespace Charakter_sheet
         public int[] statRoll() 
         {
             int[] result = new int[6];
-            for (int i = 0;i<4;i++) 
+            for (int i = 0;i<6;i++)
             {
-                result[i] += multiRoll(4,20);
+                result[i] = statMultiRoll();
             }
-            
             return result;
         }
 
-        public bool isValid(int stat)
+        public bool isValid(int[] stats)
         {
             bool result = false;
-            if (stat > 0) { }
+            int value = 0;
+            for (int i = 0;i<6;i++) 
+            {
+                value += (stats[i]/2)-5;
+            }
+            if (value <= 6)
+            {
+                result = true;
+            }
             return result;
         }
     }

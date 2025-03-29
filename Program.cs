@@ -8,8 +8,6 @@ namespace Charakter_sheet
 {
     internal static class Program
     {
-        public static float Int = 0;
-
         static void Main()
         {
             

@@ -16,6 +16,7 @@ namespace Charakter_sheet
         public Dice() 
         {
             Random dice = new Random();
+            this.baseRange = 20;
         }
         public Dice(int baseRange)
         {
@@ -35,17 +36,7 @@ namespace Charakter_sheet
             return result;
         }
 
-        public int multiRoll(int number)
-        {
-            int value = 0;
-            for (int i = 0;i<number;i++)
-            {
-                value += roll();
-            }
-            return value;
-        }
-
-        public int multiRoll(int number,int max) 
+        public int roll(int number,int max) 
         {
             int value = 0;
             for(int i = 0;i<number;i++)
@@ -55,47 +46,47 @@ namespace Charakter_sheet
             return value;
         }
 
-        public int threeBestOutOfFour()//roll do statów
+        public int[] nBestOutOfm(int n, int m)
         {
-            int value = 0;
-            int[] tab = new int[4];
-            for (int i = 0; i < 4; i++)
+            int[] tab = new int[m];
+            for (int i = 0; i < m; i++)
             {
                 tab[i] = roll(6);
             }
             Array.Sort(tab);
-            tab[3] = 0;
-            for(int i = 0;i<3;i++)
-            {
-                value += tab[i];
-            }
-            return value;
+            tab[n] = 0;
+            return tab;
         }
 
 
-        public int[] statRoll() 
+        public int[] statRoll() // standardowe rzuty statystyk DnD 6x(3d6, drop lowest)
         {
             int[] result = new int[6];
             for (int i = 0;i<6;i++)
             {
-                result[i] = threeBestOutOfFour();
+                result[i] = nBestOutOfm(3,4).Sum();
             }
             return result;
         }
 
-        public bool isValid(int[] stats)
+        public bool isValid(int[] stats,int min)
         {
-            bool result = false;
             int value = 0;
             for (int i = 0;i<6;i++) 
             {
                 value += (stats[i]/2)-5;
             }
-            if (value <= 6)
+            return value >= min;
+        }
+
+                public bool isValid(int[] stats)
+        {
+            int value = 0;
+            for (int i = 0;i<6;i++) 
             {
-                result = true;
+                value += (stats[i]/2)-5;
             }
-            return result;
+            return value >= 6;
         }
     }
 }

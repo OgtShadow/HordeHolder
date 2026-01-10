@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Charakter_sheet
 {
@@ -15,24 +11,24 @@ namespace Charakter_sheet
         //możemy podać bazowy zakres kostki co powinno być inną klasą ale to to do
         public Dice() 
         {
-            Random dice = new Random();
+            this.dice = new Random();
             this.baseRange = 20;
         }
         public Dice(int baseRange)
         {
-            Random dice = new Random();
+            this.dice = new Random();
             this.baseRange = baseRange;
         }
 
         public int roll(int max)
         {
-            int result = dice.Next(1,max);
+            int result = dice.Next(1,max + 1);
             return result;
         }
 
         public int roll()
         {
-            int result = dice.Next(1, baseRange);
+            int result = dice.Next(1, baseRange + 1);
             return result;
         }
 
@@ -54,8 +50,7 @@ namespace Charakter_sheet
                 tab[i] = roll(6);
             }
             Array.Sort(tab);
-            tab[n] = 0;
-            return tab;
+            return tab.Skip(m - n).ToArray();
         }
 
 

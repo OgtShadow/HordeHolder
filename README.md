@@ -1,6 +1,6 @@
 # Horde Holder
 
-Aplikacja Windows Forms do tworzenia i zarządzania arkuszami postaci w grach RPG.
+Aplikacja do tworzenia i zarządzania arkuszami postaci w grach RPG.
 
 ## Opis
 
@@ -13,9 +13,7 @@ Aplikacja Windows Forms do tworzenia i zarządzania arkuszami postaci w grach RP
 
 ## Struktura projektu
 
-- `Client/src/`: Kod źródłowy aplikacji
-  - `Program.cs`: Punkt wejścia aplikacji
-  - `Form1.cs`: Główny formularz GUI
+- `Server/src/`: Kod źródłowy backendu
   - `Charakter.cs`: Klasa postaci
   - `Dice.cs`: Klasa do rzutów kostką
 - `Properties/`: Pliki zasobów i ustawień

@@ -8,7 +8,7 @@ Aplikacja do tworzenia i zarządzania arkuszami postaci w grach RPG.
 
 ## Jak uruchomić
 
-   dotnet run
+   cd Client -> npm run .
 
 
 ## Struktura projektu

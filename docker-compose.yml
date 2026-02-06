@@ -1,0 +1,12 @@
+services:
+  server:
+    build: ./Server
+    container_name: server
+    ports:
+      - "8080:8080"     
+
+  client:
+    build: ./Client
+    container_name: client
+    ports:
+      - "4200:4200"

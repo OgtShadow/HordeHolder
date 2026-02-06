@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Charakter_sheet
+namespace Charakter_sheet.Services
 {
     // wielofunkcyjna kostka która będzie nam łatwiej pozwalała losować dane wszelkiej maści i rollować
     internal class Dice

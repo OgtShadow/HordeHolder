@@ -1,6 +1,7 @@
 ﻿using System;
+using Charakter_sheet.Services;
 
-namespace Charakter_sheet
+namespace Charakter_sheet.Models
 {
     class Charakter
     {

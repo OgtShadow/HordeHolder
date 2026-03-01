@@ -1,9 +1,9 @@
 .theme-selector-container {
   padding: 1rem;
   border-radius: 8px;
-  color: var(--text-primary);
   max-width: 300px;
 }
+
 
 button {
   flex: 1;

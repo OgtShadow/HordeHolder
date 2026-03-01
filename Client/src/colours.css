@@ -20,5 +20,15 @@
     --util: var(--color-dark-util);
     --text: var(--color-light-bg);
     --accent: var(--accents-system);
-    --user: var(--accents-user); 
+    --user: var(--accents-user);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --bg: var(--color-dark-bg);
+        --util: var(--color-dark-util);
+        --text: var(--color-light-bg);
+        --accent: var(--accents-system);
+        --user: var(--accents-user);
+    }
 }

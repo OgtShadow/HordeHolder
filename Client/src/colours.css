@@ -10,7 +10,7 @@
 :root, [data-theme="light"] {
     --bg: var(--color-light-bg);
     --util: var(--color-light-util);
-    --text-primary: var(--color-dark-bg);
+    --text: var(--color-dark-bg);
     --accent: var(--accents-system); 
     --user: var(--accents-user);
 }
@@ -18,7 +18,7 @@
 [data-theme="dark"] {
     --bg: var(--color-dark-bg);
     --util: var(--color-dark-util);
-    --text-primary: var(--color-light-bg);
+    --text: var(--color-light-bg);
     --accent: var(--accents-system);
     --user: var(--accents-user); 
 }

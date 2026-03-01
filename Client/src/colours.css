@@ -1,0 +1,24 @@
+:root {
+    --color-light-bg: #F2E8DC;
+    --color-light-util: #BFB7AE;
+    --color-dark-bg: #262320;
+    --color-dark-util: #59514B;
+    --accents-system: #806A53;
+    --accents-user: #71100f;
+}
+
+:root, [data-theme="light"] {
+    --bg: var(--color-light-bg);
+    --util: var(--color-light-util);
+    --text-primary: var(--color-dark-bg);
+    --accent: var(--accents-system); 
+    --user: var(--accents-user);
+}
+
+[data-theme="dark"] {
+    --bg: var(--color-dark-bg);
+    --util: var(--color-dark-util);
+    --text-primary: var(--color-light-bg);
+    --accent: var(--accents-system);
+    --user: var(--accents-user); 
+}

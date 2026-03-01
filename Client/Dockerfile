@@ -5,4 +5,4 @@ RUN npm ci --silent
 COPY . .
 RUN npx ng build
 
-CMD ["npx","ng","serve", "--port", "4200", "--host", "0.0.0.0"]
+CMD ["npx","ng","serve", "--port", "4200", "--host", "0.0.0.0", "--poll", "2000"]

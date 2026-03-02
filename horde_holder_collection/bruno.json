@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Horde_Holder_Collection",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
